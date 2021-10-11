@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: 989896714915.dkr.ecr.ap-south-1.amazonaws.com/springboot:latest
+        image: 932233252044.dkr.ecr.sa-east-1.amazonaws.com/intercorp_retail_test:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 5000
 # service type loadbalancer
 ---
 apiVersion: v1
@@ -29,6 +29,6 @@ spec:
     app: spring-boot-app
   ports:
     - protocol: TCP
-      port: 8080
-      targetPort: 8080
+      port: 5000
+      targetPort: 5000
   type: LoadBalancer
